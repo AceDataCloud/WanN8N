@@ -1,0 +1,17 @@
+{
+  "id": "aceWanVideoSmokeTest",
+  "name": "Wan Video credential boundary smoke test",
+  "nodes": [
+    { "id": "start", "name": "Start", "type": "n8n-nodes-base.manualTrigger", "typeVersion": 1, "position": [0, 0], "parameters": {} },
+    {
+      "id": "create", "name": "Create", "type": "@acedatacloud/n8n-nodes-wan-video.wanVideo", "typeVersion": 1, "position": [240, 0],
+      "parameters": {
+        "resource": "video", "operation": "create", "model": "wan2.6-t2v",
+        "prompt": "A red paper kite floating above a green meadow, steady camera, no text. n8n validation.",
+        "imageUrl": "", "referenceVideoUrls": "", "resolution": "720P", "duration": 5, "audio": false
+      }
+    }
+  ],
+  "connections": { "Start": { "main": [[{ "node": "Create", "type": "main", "index": 0 }]] } },
+  "settings": { "executionOrder": "v1" }
+}

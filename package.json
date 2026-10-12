@@ -1,6 +1,6 @@
 {
   "name": "@acedatacloud/n8n-nodes-wan-video",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate Wan videos and retrieve their tasks in n8n through Ace Data Cloud.",
   "license": "MIT",
   "homepage": "https://github.com/AceDataCloud/WanN8N",

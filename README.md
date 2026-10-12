@@ -2,7 +2,7 @@
 
 Create one Wan video, then query its task until the video is ready. This community package connects only the Wan Video service through Ace Data Cloud. The screenshots show a real self-hosted n8n 2.42.3 instance in English. n8n Creator Portal verification is pending.
 
-**Package:** `@acedatacloud/n8n-nodes-wan-video` · [Wan Video API and pricing](https://platform.acedata.cloud/documents/wan-videos) · [Source](https://github.com/AceDataCloud/WanN8N)
+**Package:** `@acedatacloud/n8n-nodes-wan-video` · [Wan Video API and pricing](https://platform.acedata.cloud/documents/wan-videos?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=wann8n_readme_documents_wan_videos) · [Source](https://github.com/AceDataCloud/WanN8N)
 
 ## Quick start
 
@@ -14,7 +14,9 @@ In self-hosted n8n, sign in as an owner or admin. Open **Settings → Community 
 
 ### 2. Get an API key with Wan access
 
-1. Sign in at [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications).
+New account? Register and sign in first. If the Applications page has no General application yet, choose **Initialize General Application**, then continue with the key steps below.
+
+1. Sign in at [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=wann8n_readme_api_key).
 2. Open **General application** and copy its API key, or choose **Manage Keys → Create** for a separate n8n key.
 3. Check Wan access, current price for **Wan 2.6 Text to Video** at 720P for 5 seconds, and your balance. If you enable **Allowed APIs**, include `/wan/videos` and `/wan/tasks`. The optional n8n credential test also uses the read-only `/openai/models` metadata route.
 
@@ -54,7 +56,7 @@ Check the current price and balance before running. Keep **Retry On Fail** off a
 
 Open **Get Task** output. A completed video has `status=succeeded`, `finished=true`, `successful=true`, and a link in `videoUrls`. Open the returned link. If the task is still processing, **do not rerun the full workflow**: that would submit another paid video. Import the [query-only workflow](https://github.com/AceDataCloud/WanN8N/raw/refs/heads/main/examples/query-existing-task.json), replace its placeholder with the original task ID and execute it again later. The [bounded polling workflow](https://github.com/AceDataCloud/WanN8N/raw/refs/heads/main/examples/generate-and-wait.json) queries that same ID every 15 seconds for at most 30 minutes; it never resubmits Create.
 
-Compare the task's trace ID and time with [Ace Data Cloud usage history](https://platform.acedata.cloud/console). Any `cost.amount` is in **Credits**, not USD. Price varies by model, resolution, duration, audio option and your account package. A previously completed Dify example used **Wan 3.0**, a different model from this quickstart; it is not an n8n call or evidence that this Wan 2.6 workflow completed. A credentialed n8n result and matching bill have not yet been verified for this release.
+Compare the task's trace ID and time with [Ace Data Cloud usage history](https://platform.acedata.cloud/console?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=wann8n_readme_console). Any `cost.amount` is in **Credits**, not USD. Price varies by model, resolution, duration, audio option and your account package. A previously completed Dify example used **Wan 3.0**, a different model from this quickstart; it is not an n8n call or evidence that this Wan 2.6 workflow completed. A credentialed n8n result and matching bill have not yet been verified for this release.
 
 ## Other options and troubleshooting
 

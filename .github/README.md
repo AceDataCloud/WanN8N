@@ -30,7 +30,7 @@ Copy only the application token. Do not add `Bearer ` or quotation marks, and do
 
 ### 3. Save the credential in n8n
 
-Add **Wan Video by Ace Data Cloud** to a workflow. In **Credential**, choose **Connect to Wan Video by Ace Data Cloud** and create a new credential. Paste the token into **API Token**. Set **Allowed HTTP Request Domains** to **Specific Domains → `api.acedata.cloud`** and save. Select the same credential on **Create** and **Get Task**.
+Add **Wan Video** to a workflow. In **Credential**, choose **Connect to Wan Video** and create a new credential. Paste the token into **API Token**. Set **Allowed HTTP Request Domains** to **Specific Domains → `api.acedata.cloud`** and save. Select the same credential on **Create** and **Get Task**.
 
 The credential test checks the token through the read-only `/openai/models` route. If your key restricts API paths, allow that route for the test or check access through the first Wan task query; a successful metadata test alone does not prove Wan access.
 

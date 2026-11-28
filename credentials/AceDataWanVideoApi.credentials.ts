@@ -2,7 +2,7 @@ import type { IAuthenticateGeneric, ICredentialTestRequest, ICredentialType, INo
 
 export class AceDataWanVideoApi implements ICredentialType {
   name = 'aceDataWanVideoApi';
-  displayName = 'Wan Video by Ace Data Cloud API';
+  displayName = 'Wan Video API';
   documentationUrl = 'https://github.com/AceDataCloud/WanN8N#credentials';
   icon = 'file:../nodes/WanVideo/icon.svg' as const;
   properties: INodeProperties[] = [{
